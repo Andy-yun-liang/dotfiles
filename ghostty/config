@@ -1,0 +1,32 @@
+desktop-notifications = false
+shell-integration-features = no-title
+quick-terminal-position = center
+background-opacity = 0.87
+background-blur = 19
+theme = Catppuccin Frappe
+minimum-contrast = 2.6
+background = #201F30
+foreground = #23E498
+selection-background = #EACDEA
+selection-foreground = #E91E89
+cursor-color = #D8E4D9
+cursor-text = #FFFFFF
+cursor-opacity = 0.65
+cursor-style = bar
+palette = 0=#51576d
+palette = 1=#e78284
+palette = 2=#a6d189
+palette = 3=#DECFB1
+palette = 4=#8caaee
+palette = 5=#f4b8e4
+palette = 6=#81c8be
+palette = 7=#a5adce
+palette = 8=#626880
+palette = 9=#e67172
+palette = 10=#8ec772
+palette = 11=#d9ba73
+palette = 12=#7b9ef0
+palette = 13=#f2a4db
+palette = 14=#5abfb5
+palette = 15=#b5bfe2
+
