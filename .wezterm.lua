@@ -1,11 +1,13 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
+local act = wezterm.action
+
 
 -- Base theme
 config.color_scheme = 'Tokyo Night'
 
 -- Transparency + blur
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.95
 config.macos_window_background_blur = 10
 
 -- UI and tabs
@@ -21,16 +23,16 @@ config.font = wezterm.font_with_fallback {
   'SF Mono',
   'Menlo',
 }
-config.font_size = 13.5
+config.font_size = 15.5
 config.line_height = 1.2
 config.adjust_window_size_when_changing_font_size = false
 
 -- Window padding
 config.window_padding = {
-  left = 10,
-  right = 10,
-  top = 6,
-  bottom = 6,
+  left = 8,
+  right = 0,
+  top = 20,
+  bottom = 8,
 }
 
 config.colors = {
@@ -48,7 +50,7 @@ config.colors = {
       intensity = "Bold",
     },
     inactive_tab = {
-      bg_color = "#1a1b26",
+      bg_color = "#c3cfb8",
       fg_color = "#7c7f93",
     },
     inactive_tab_hover = {
@@ -90,11 +92,24 @@ config.colors = {
 
 -- Cursor style
 config.default_cursor_style = "BlinkingBar"
-config.cursor_blink_rate = 500
+config.cursor_blink_rate = 600
 config.force_reverse_video_cursor = false
 
 -- Scroll and performance
 config.enable_scroll_bar = false
 config.scrollback_lines = 7000
+
+-- height and length of terminal on startup
+
+config.initial_rows = 20
+config.initial_cols = 85
+
+-- Cycle tabs 
+config.keys = {
+  { key = '[', mods = 'CMD', action = act.ActivateTabRelative(-1) },
+  { key = ']', mods = 'CMD', action = act.ActivateTabRelative(1) },
+  { key = 'n', mods = 'CMD', action = act.SpawnTab('CurrentPaneDomain') },
+  { key = 'q', mods = 'CMD', action = act.CloseCurrentTab { confirm = true } },
+}
 
 return config
