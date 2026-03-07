@@ -98,8 +98,8 @@ local act = wezterm.action
 config.keys = {
   { key = "n", mods = "CTRL", action = act.SpawnTab("CurrentPaneDomain") },
   { key = "q", mods = "CTRL", action = act.CloseCurrentTab({ confirm = true }) },
-  { key = "H", mods = "SHIFT", action = act.ActivateTabRelative(-1) },
-  { key = "L", mods = "SHIFT", action = act.ActivateTabRelative(1) },
+  { key = "H", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
+  { key = "L", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(1) },
 }
 
 return config
